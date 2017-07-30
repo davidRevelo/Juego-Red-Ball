@@ -4,6 +4,7 @@ from Monedas import Moneda
 from pygame.locals import *
 import random
 from random import randint  # crear numeros aleatorios
+import Archivos as archi
 import time
 import threading
 
@@ -140,6 +141,11 @@ class Main(object):
                 
                 miTextoSistema2 = mifuenteSistema.render(puntaje,5,Rojo)
                 print(puntuacion)
+                L=str(puntuacion)
+                archi.creartxt("puntuaciones.txt")
+                archi.grabartxt("puntuaciones.txt",L)
+                print("La puntuacion es:",str(L))
+                
 
             #Agrego las monedas a la ventana
             listade_todos_los_sprites.draw(screen)
